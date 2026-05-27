@@ -1,9 +1,9 @@
-# Sparta Payment System
+# Payment System
 
-**팀스파르타 내일배움캠프 Spring 트랙 : 커머스 기반 결제 시스템 Starter 프로젝트**
+**커머스 기반 결제 시스템 프로젝트**
 
-이 프로젝트는 이커머스 결제 시스템 구축 강의의 **초기 셋업(Starter) 프로젝트**입니다.
-수강생은 이 프로젝트를 fork & clone한 뒤, 강의를 따라가며 상품 · 회원 · 장바구니 · 주문 · 결제 · 환불 도메인을 직접 구현합니다.
+이 프로젝트는 이커머스 결제 시스템을 직접 구현한 프로젝트입니다.
+상품 · 회원 · 장바구니 · 주문 · 결제 · 환불 도메인을 직접 구현합니다.
 
 > Spring Boot + JPA + MySQL + Thymeleaf UI가 미리 구성되어 있으며, **백엔드 API를 구현하면 화면이 동작**하는 구조입니다.
 
@@ -27,14 +27,14 @@
 ## 프로젝트 구조
 
 ```
-sparta-payment-system/
+payment-system/
 ├── build.gradle                  # 프로젝트 빌드 설정
 ├── settings.gradle               # 프로젝트 이름 설정
 ├── docker-compose.yml            # MySQL 컨테이너 설정
 ├── gradlew / gradlew.bat         # Gradle Wrapper
 └── src/main/
-    ├── java/com/sparta/paymentsystem/
-    │   ├── SpartaPaymentSystemApplication.java   # 메인 애플리케이션
+    ├── java/com/paymentsystem/
+    │   ├── PaymentSystemApplication.java   # 메인 애플리케이션
     │   ├── global/
     │   │   ├── config/
     │   │   │   ├── JpaAuditingConfig.java        # JPA Auditing 설정
@@ -63,7 +63,7 @@ sparta-payment-system/
 
 ## 패키지 및 제공 코드 설명
 
-### `SpartaPaymentSystemApplication.java`
+### `PaymentSystemApplication.java`
 
 Spring Boot 메인 클래스입니다. `@SpringBootApplication` 어노테이션으로 컴포넌트 스캔, 자동 설정, 설정 클래스 등록을 한 번에 처리합니다.
 
@@ -120,7 +120,7 @@ MySQL 8 컨테이너를 실행하는 Docker Compose 파일입니다.
 
 | 항목 | 값 |
 |------|-----|
-| 컨테이너 이름 | `sparta-payment-mysql` |
+| 컨테이너 이름 | `payment-mysql` |
 | Root 비밀번호 | `root1234` |
 | 데이터베이스 | `payment_db` |
 | 포트 | `3306:3306` |
@@ -128,7 +128,7 @@ MySQL 8 컨테이너를 실행하는 Docker Compose 파일입니다.
 
 ### `templates/` (Thymeleaf 화면)
 
-강의 중 구현할 백엔드 API가 완성되면 동작하는 **프론트엔드 화면 템플릿**이 미리 제공됩니다. 수강생은 프론트엔드 코드를 수정할 필요 없이, 백엔드 API 구현에만 집중하면 됩니다.
+백엔드 API가 완성되면 동작하는 프론트엔드 화면 템플릿입니다.
 
 ### `static/images/`
 
@@ -142,7 +142,7 @@ MySQL 8 컨테이너를 실행하는 Docker Compose 파일입니다.
 
 ```bash
 git clone <repository-url>
-cd sparta-payment-system-starter
+cd payment-system-starter
 ```
 
 ### 2. MySQL 실행 (Docker)
